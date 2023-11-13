@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=DM Sans:700|Open Sans:400');
+@import url('https://fonts.googleapis.com/css?family=DM Sans:700|Nunito Sans:500');
 :root{
     --text: #dee2e9;
     --background: #ECEFF7;
@@ -9,7 +9,7 @@
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-weight: 900;
 }
 
@@ -21,8 +21,8 @@ h4 {font-size: 1.777rem; /* 28.48px */}
 h5 {font-size: 1.333rem; /* 21.28px */}
 small {font-size: 0.750rem; /* 12px */}
 body, p, input, button{
-    font-family: 'Open Sans';
-    font-weight: 400;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 500;
 }
 
 .main{
@@ -49,7 +49,8 @@ body, p, input, button{
 .heading{
     margin-left: 1.5vw;
     width: max-content;
-    color: var(--text);
+    color: white;
+    margin-bottom: -20px;
 }
 
 /* Login */
