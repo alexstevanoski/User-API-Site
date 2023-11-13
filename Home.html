@@ -9,34 +9,55 @@
     <body>
         <div class="main">
             <div class="topnav">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
+                <button onclick="showLogin()" id="showLoginButton">Login</a>
+                <button onclick="showRegister()" id="showRegisterButton">Register</a>
             </div>
             <div class="heading">
                 <h1>Welcome to the User API!</h1>
             </div>
-            <div class="login">
+            <div id="login" class="method">
                 <!-- Login code -->
                 <h3 id="login-title">Login</h1>
                 <form id="login-form">
-                    <input type="text" id="login-name" placeholder="Name"><br>
                     <input type="text" id="login-email" placeholder="Email"><br>
                     <input type="text" id="login-password" placeholder="Password"><br>
-                
+
                     <input type="submit" id="login-submit" value="Login">
                 </form>
             </div>
-            
-            <div class="register">
+
+            <div id="register" class="method">
                 <!-- Registration code -->
                 <h3 id="register-title">Register</h1>
                 <form id="register-form">
                     <input type="text" id="register-name" placeholder="Name"><br>
                     <input type="text" id="register-email" placeholder="Email"><br>
                     <input type="text" id="register-password" placeholder="Password"><br>
-                
+
                     <input type="submit" id="register-submit" value="Register">
                 </form>
             </div>
         </div>
     </body>
+
+    <script>
+        function showLogin() {
+            var loginDiv = document.getElementById('login');
+            var registerDiv = document.getElementById('register');
+            
+            var loginBtn = document.getElementById('showLoginButton');
+            var registerBtn = document.getElementById('showRegisterButton');
+
+            
+            loginDiv.style.display = 'block';
+            registerDiv.style.display = 'none';
+        }
+        function showRegister() {
+            var loginDiv = document.getElementById('login');
+            var registerDiv = document.getElementById('register');
+            
+            loginDiv.style.display = 'none';
+            registerDiv.style.display = 'block';
+        }
+    </script>
+</html>
