@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css?family=DM Sans:700|Open Sans:400');
+:root{
+    --text: #dee2e9;
+    --background: #151b25;
+    --primary: #abbdda;
+    --secondary: #86a6de;
+    --accent: #15356d;
+
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'DM Sans';
+  font-weight: 900;
+}
+
+html {font-size: 100%;} /* 16px */
+h1 {font-size: 4.210rem; /* 67.36px */}
+h2 {font-size: 3.158rem; /* 50.56px */}
+h3 {font-size: 2.369rem; /* 37.92px */}
+h4 {font-size: 1.777rem; /* 28.48px */}
+h5 {font-size: 1.333rem; /* 21.28px */}
+small {font-size: 0.750rem; /* 12px */}
+body{
+    background-color: var(--background);
+    font-family: 'Open Sans';
+    font-weight: 400;
+}
+
+.main{
+    background-image: url(Resources/Background.jpg);
+    background-size: auto;
+    height: 101vh;
+    width: 101vw;
+    margin-left: -9px;
+    margin-top: -9px;
+}
+
+/* Heading */
+.heading{
+    margin-top: -2vh;
+    margin-left: 1.5vw;
+    color: var(--text);
+}
+
+
+
+/* Top Nav */
+.topnav{
+    width: 100vw;
+    height: 7vh;
+    overflow: hidden;
+}
+
+.topnav a{
+    background-color: var(--secondary);
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 25px 10px 25px;
+    font-size: 1.333rem;
+    font-family: 'DM Sans';
+    font-weight: 500;
+    color: var(--text);
+    border-radius: 25px;
+    margin-left: 1.5vw;
+    margin-top: 20px;
+    display: block;
+    transition: .3s ease all;
+}
+
+.topnav a:hover{
+    background-color: var(--hover);
+    color: var(--background)
+}
+
+.topnav a:active{
+    background-color: var(--accent);
+    color: var(--background);
+}
+
+
+/* Login */
+
+.login{
+    text-align: center;
+    background-color: var(--primary);
+    width: 20vw;
+    margin-left: 1.5vw;
+    margin-top: 3vh;
+    border-radius: 20px;
+    box-shadow: 1px 12px 40px var(--primary);
+}
+
+#login-title{
+    padding-top: 20px;
+}
+#login-form{
+    text-align: center;
+}
+
+#login-name, #login-email, #login-password{
+    margin-bottom: 15px;
+    width: 80%;
+    height: 30px;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    text-align: center;
+}
+
+#login-submit{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 40%;
+    padding: 10px;
+    background-color: var(--accent);
+    color: white;
+    border: 0;
+    border-radius: 8px;
+}
+#login-submit:hover{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 40%;
+    padding: 10px;
+    background-color: var(--hover);
+    color: white;
+    border: 0;
+    border-radius: 8px;
+}
+
+/* Registration */
+.register{
+    text-align: center;
+    background-color: var(--primary);
+    width: 20vw;
+    margin-left: 1.5vw;
+    margin-top: 3vh;
+    border-radius: 20px;
+    box-shadow: 1px 12px 40px var(--primary);
+}
+
+#register-title{
+    padding-top: 20px;
+}
+#register-form{
+    text-align: center;
+}
+
+#register-name, #register-email, #register-password{
+    margin-bottom: 15px;
+    width: 80%;
+    height: 30px;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    text-align: center;
+}
+
+#register-submit{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 40%;
+    padding: 10px;
+    background-color: var(--accent);
+    color: white;
+    border: 0;
+    border-radius: 8px;
+}
+
+#register-submit:hover{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 40%;
+    padding: 10px;
+    background-color: var(--hover);
+    color: white;
+    border: 0;
+    border-radius: 8px;
+}
