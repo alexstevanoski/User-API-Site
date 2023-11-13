@@ -8,35 +8,35 @@
     </head>
     <body>
         <div class="main">
-            <div class="topnav">
-                <button onclick="showLogin()" id="showLoginButton">Login</a>
-                <button onclick="showRegister()" id="showRegisterButton">Register</a>
+            <div class="side">
+                <div class="heading">
+                    <h1>Welcome to my User API!</h1>
+                </div>
+                <div id="login" class="method">
+                    <!-- Login code -->
+                    <h4 id="login-title">Log in to your account</h4>
+                    <p id="login-description">If you have an existing account, enter your details below to log in.</p>
+                    <form id="login-form">
+                        <input type="text" id="login-email" placeholder="Email"><br>
+                        <input type="text" id="login-password" placeholder="Password"><br>
+                    </form>
+                    <input form="login-form" type="submit" id="login-submit" value="Login">
+                    <button onclick="showRegister()" id="register-button">Make an account</a>
+                </div>
+                <div id="register" class="method">
+                    <!-- Register code -->
+                    <h4 id="register-title">Create an account</h4>
+                    <p id="register-description">New to my API? Enter your details to register an account.</p>
+                    <form id="register-form">
+                        <input type="text" id="register-name" placeholder="Name"><br>
+                        <input type="text" id="register-email" placeholder="Email"><br>
+                        <input type="text" id="register-password" placeholder="Password"><br>
+                    </form>
+                    <input form="register-form" type="submit" id="register-submit" value="Register">
+                    <button onclick="showLogin()" id="login-button">Have an account?</a>
+                </div>
             </div>
-            <div class="heading">
-                <h1>Welcome to the User API!</h1>
-            </div>
-            <div id="login" class="method">
-                <!-- Login code -->
-                <h3 id="login-title">Login</h1>
-                <form id="login-form">
-                    <input type="text" id="login-email" placeholder="Email"><br>
-                    <input type="text" id="login-password" placeholder="Password"><br>
-
-                    <input type="submit" id="login-submit" value="Login">
-                </form>
-            </div>
-
-            <div id="register" class="method">
-                <!-- Registration code -->
-                <h3 id="register-title">Register</h1>
-                <form id="register-form">
-                    <input type="text" id="register-name" placeholder="Name"><br>
-                    <input type="text" id="register-email" placeholder="Email"><br>
-                    <input type="text" id="register-password" placeholder="Password"><br>
-
-                    <input type="submit" id="register-submit" value="Register">
-                </form>
-            </div>
+            
         </div>
     </body>
 

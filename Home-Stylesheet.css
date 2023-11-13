@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=DM Sans:700|Open Sans:400');
 :root{
     --text: #dee2e9;
-    --background: #151b25;
+    --background: #ECEFF7;
     --primary: #abbdda;
     --secondary: #86a6de;
     --accent: #15356d;
-
+    --textfield: #cfcfcf;
 }
 
 h1, h2, h3, h4, h5 {
@@ -13,169 +13,186 @@ h1, h2, h3, h4, h5 {
   font-weight: 900;
 }
 
-html {font-size: 100%;} /* 16px */
+html {font-size: 100%; height: 100vh; width: 100vw; overflow-y:hidden; overflow-x:hidden; margin-top:-8px;} /* 16px */
 h1 {font-size: 4.210rem; /* 67.36px */}
 h2 {font-size: 3.158rem; /* 50.56px */}
 h3 {font-size: 2.369rem; /* 37.92px */}
 h4 {font-size: 1.777rem; /* 28.48px */}
 h5 {font-size: 1.333rem; /* 21.28px */}
 small {font-size: 0.750rem; /* 12px */}
-body{
-    background-color: var(--background);
+body, p, input, button{
     font-family: 'Open Sans';
     font-weight: 400;
 }
 
 .main{
     background-image: url(Resources/Background.jpg);
-    background-size: auto;
+    background-size: cover;
     height: 100vh;
     width: 100vw;
-    margin-left: -9px;
-    margin-top: -9px;
+    image-resolution: 50%;
+    margin: 0;
+}
+
+.side {
+    height: 100vh;
+    width: 20vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #000000, rgba(255,0,0,0));
+    overflow-x:visible;
+    padding-top: 20px;
 }
 
 /* Heading */
 .heading{
-    margin-top: -2vh;
     margin-left: 1.5vw;
+    width: max-content;
     color: var(--text);
 }
-
-
-
-/* Top Nav */
-.topnav{
-    width: 100vw;
-    height: 7vh;
-    overflow: hidden;
-}
-
-.topnav button{
-    background-color: var(--secondary);
-    float: left;
-    text-align: center;
-    text-decoration: none;
-    padding: 10px 25px 10px 25px;
-    font-size: 1.333rem;
-    font-family: 'DM Sans';
-    font-weight: 500;
-    color: var(--text);
-    border-radius: 25px;
-    margin-left: 1.5vw;
-    margin-top: 20px;
-    display: block;
-    transition: .3s ease all;
-    border: none;
-}
-
-.topnav button:hover{
-    background-color: var(--accent);
-    color: var(--text)
-}
-
-.topnav button:active{
-    background-color: var(--accent);
-    color: var(--background);
-}
-
 
 /* Login */
 
 #login{
-    text-align: center;
-    background-color: var(--primary);
-    width: 20vw;
+    text-align: left;
+    width: 100%;
+    height: 60vh;
     margin-left: 1.5vw;
-    margin-top: 3vh;
+    margin-top: 1vh;
     border-radius: 20px;
-    box-shadow: 1px 12px 40px var(--primary);
     display: block;
+    transition-duration: 0.5s;
 }
 
 #login-title{
     padding-top: 20px;
+    color: var(--text);
 }
+
+#login-description{
+    margin-top: -20px;
+    padding-bottom: 20px;
+    color: var(--textfield);
+    width: 80%;
+}
+
 #login-form{
-    text-align: center;
+    text-align: left;
 }
 
 #login-name, #login-email, #login-password{
     margin-bottom: 15px;
-    width: 80%;
-    height: 30px;
+    width: 95%;
+    height: 40px;
     border: 2px solid var(--accent);
     border-radius: 8px;
-    text-align: center;
+    text-align: left;
+    padding-left: 15px;
+    background-color: var(--textfield)
 }
 
 #login-submit{
     margin-top: 15px;
-    margin-bottom: 15px;
-    width: 40%;
-    padding: 10px;
+    width: 45%;
+    padding: 15px;
     background-color: var(--accent);
     color: white;
     border: 0;
     border-radius: 8px;
+    float: left;
 }
+
 #login-submit:hover{
+    background-color: white;
+    color:black;
+}
+
+#register-button{
     margin-top: 15px;
-    margin-bottom: 15px;
-    width: 40%;
-    padding: 10px;
-    background-color: var(--hover);
+    width: 45%;
+    padding: 15px;
+    background-color: var(--secondary);
     color: white;
     border: 0;
     border-radius: 8px;
+    margin-right: 0;
+    float: right;
+}
+
+#register-button:hover{
+    background-color: white;
+    color: black;
 }
 
 /* Registration */
 #register{
-    text-align: center;
-    background-color: var(--primary);
-    width: 20vw;
+    text-align: left;
+    width: 100%;
+    height: 60vh;
     margin-left: 1.5vw;
-    margin-top: 3vh;
+    margin-top: 1vh;
     border-radius: 20px;
-    box-shadow: 1px 12px 40px var(--primary);
     display: none;
+    transition-duration: 0.5s;
 }
 
 #register-title{
     padding-top: 20px;
+    color: var(--text);
 }
+
+#register-description{
+    margin-top: -20px;
+    padding-bottom: 20px;
+    color: var(--textfield);
+    width: 80%;
+}
+
 #register-form{
-    text-align: center;
+    text-align: left;
 }
 
 #register-name, #register-email, #register-password{
     margin-bottom: 15px;
-    width: 80%;
-    height: 30px;
+    width: 95%;
+    height: 40px;
     border: 2px solid var(--accent);
     border-radius: 8px;
-    text-align: center;
+    text-align: left;
+    padding-left: 15px;
+    background-color: var(--textfield)
 }
 
 #register-submit{
     margin-top: 15px;
-    margin-bottom: 15px;
-    width: 40%;
-    padding: 10px;
+    width: 45%;
+    padding: 15px;
     background-color: var(--accent);
     color: white;
     border: 0;
     border-radius: 8px;
+    float: left;
 }
 
 #register-submit:hover{
+    background-color: white;
+    color:black;
+}
+
+#login-button{
     margin-top: 15px;
-    margin-bottom: 15px;
-    width: 40%;
-    padding: 10px;
-    background-color: var(--hover);
+    width: 45%;
+    padding: 15px;
+    background-color: var(--secondary);
     color: white;
     border: 0;
     border-radius: 8px;
+    margin-right: 0;
+    float: right;
+}
+
+#login-button:hover{
+    background-color: white;
+    color: black;
 }
