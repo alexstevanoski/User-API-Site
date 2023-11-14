@@ -5,12 +5,22 @@
         <meta charset="utf-8">
         <title>User API Site</title>
         <link rel="stylesheet" href="Home-Stylesheet.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     </head>
     <body>
         <div class="main">
+            
             <div class="side">
+                <span id="github-button" onclick="location.href='https://github.com/alexstevanoski';">
+                    <span id="linkSVG">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" width="35"><path d="M440-280H280q-83 0-141.5-58.5T80-480q0-83 58.5-141.5T280-680h160v80H280q-50 0-85 35t-35 85q0 50 35 85t85 35h160v80ZM320-440v-80h320v80H320Zm200 160v-80h160q50 0 85-35t35-85q0-50-35-85t-85-35H520v-80h160q83 0 141.5 58.5T880-480q0 83-58.5 141.5T680-280H520Z"/></svg>
+                    </span>
+                    <span id="linkCaption">
+                        <p id="linkcaptext">View on Github</p>
+                    </span>
+                </span>
                 <div class="heading">
-                    <h1>Welcome to my User API!</h1>
+                    <h1>Welcome to the User API!</h1>
                 </div>
                 <div id="login" class="method">
                     <!-- Login code -->
@@ -58,6 +68,31 @@
             
             loginDiv.style.display = 'none';
             registerDiv.style.display = 'block';
+        }
+
+        const registerForm = document.queryselector("#register-form");
+        if (registerForm) {
+            registerForm.addEventListener("submit", function(e) {
+                submitForm(e, this);
+            });
+        }
+
+        async function submitForm(e, form) {
+            e.preventDefault();
+
+            const btnSubmit = document.getElementById(registerBtn);
+            btnSubmit.disabled = true;
+            setTimeout(() => btnSubmit.disabled = false, 2000);
+
+            const headers = buildHeaders();
+
+            const response = await fetchService.performPostHttpRequest('https://localhost:XXXPORTXXX', headers, jsonFormData);
+            console.log(response);
+
+            if(response)
+                window.location = '/success.html?Name=${reponse.Name}&Email-${repsonse.Email}&Id-${reponse.Id}&Password-${response.Password}';
+            else
+                alert('An error occured.');
         }
     </script>
 </html>

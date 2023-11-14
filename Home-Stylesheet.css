@@ -34,6 +34,30 @@ body, p, input, button{
     margin: 0;
 }
 
+#github-button{
+    display: inline-block;
+    margin-left: 1.5vw;
+    margin-top: 0;
+    width: max-content;
+}
+
+#linkCaption, #linkSVG{
+    vertical-align: middle;
+    display: inline-block;
+    color: var(--text);
+    margin-top: -20px;
+    padding: 5px;
+    height: max-content;
+}
+
+#linkcaptext{
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+}
+
+path{
+    fill: var(--text);
+}
 .side {
     height: 100vh;
     width: 20vw;
@@ -47,9 +71,10 @@ body, p, input, button{
 
 /* Heading */
 .heading{
-    margin-left: 1.5vw;
     width: max-content;
     color: white;
+    margin-left: 1.5vw;
+    margin-top: -3vh;
     margin-bottom: -20px;
 }
 
