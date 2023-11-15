@@ -41,11 +41,10 @@ body, p, input, button{
     width: max-content;
 }
 
-#linkCaption, #linkSVG{
+#linkCaption{
     vertical-align: middle;
     display: inline-block;
     color: var(--text);
-    margin-top: -20px;
     padding: 5px;
     height: max-content;
 }
@@ -53,6 +52,7 @@ body, p, input, button{
 #linkcaptext{
     font-family: 'DM Sans', sans-serif;
     font-weight: 300;
+    font-size: 0.8rem;;
 }
 
 path{
