@@ -83,7 +83,7 @@
 
             const headers = buildHeaders();
 
-            const response = await fetchService.performPostHttpRequest('https://localhost:XXXPORTXXX', headers, jsonFormData);
+            const response = await fetchService.performPostHttpRequest('https://localhost:7006/api/CreatePerson', headers, jsonFormData);
             console.log(response);
 
             if(response)
