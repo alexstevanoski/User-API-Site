@@ -34,37 +34,58 @@
                     <!-- Register code -->
                     <h4 id="register-title">Create a new account</h4>
                     <p id="register-description">New to my API? Enter your details to register an account.</p>
-                    <form action="https://localhost:7006/api/Person/CreatePerson" method="POST" id="register-form">
+                    <form id="registerForm">
                         <input type="text" name="name" id="register-name" placeholder="Name"/><br>
                         <input type="text" name="email" id="register-email" placeholder="Email"/><br>
                         <input type="text" name="password" id="register-password" placeholder="Password"/><br>
-                        <input form="register-form" type="submit" id="register-submit" value="Register">
+                        <button type="button" id="register-submit" onclick="postData()">Register</button>
                     </form>
                     <button onclick="showLogin()" id="login-button">Have an account?</a>
                 </div>
             </div>
             
         </div>
+        <script>
+            function showLogin() {
+                var loginDiv = document.getElementById('login');
+                var registerDiv = document.getElementById('register');
+                
+                var loginBtn = document.getElementById('showLoginButton');
+                var registerBtn = document.getElementById('showRegisterButton');
+    
+                
+                loginDiv.style.display = 'block';
+                registerDiv.style.display = 'none';
+            }
+            function showRegister() {
+                var loginDiv = document.getElementById('login');
+                var registerDiv = document.getElementById('register');
+                
+                loginDiv.style.display = 'none';
+                registerDiv.style.display = 'block';
+            }
+    
+            function postData() {
+                const regForm = document.getElementById('registerForm');
+                const formData = new FormData(regForm);
+                console.log(formData);
+    
+                fetch('https://localhost:7006/api/Person/CreatePerson', {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json; charset=utf-8',
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(data => {
+                    console.log('FORMDATA: ', formData);
+                    console.log('Success: ', data);
+                })
+                .catch(error => {
+                    console.error('Error: ', error);
+                })
+            }
+        </script>
     </body>
-
-    <script>
-        function showLogin() {
-            var loginDiv = document.getElementById('login');
-            var registerDiv = document.getElementById('register');
-            
-            var loginBtn = document.getElementById('showLoginButton');
-            var registerBtn = document.getElementById('showRegisterButton');
-
-            
-            loginDiv.style.display = 'block';
-            registerDiv.style.display = 'none';
-        }
-        function showRegister() {
-            var loginDiv = document.getElementById('login');
-            var registerDiv = document.getElementById('register');
-            
-            loginDiv.style.display = 'none';
-            registerDiv.style.display = 'block';
-        }
-    </script>
 </html>
