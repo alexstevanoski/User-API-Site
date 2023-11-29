@@ -34,12 +34,12 @@
                     <!-- Register code -->
                     <h4 id="register-title">Create a new account</h4>
                     <p id="register-description">New to my API? Enter your details to register an account.</p>
-                    <form id="register-form">
-                        <input type="text" id="register-name" placeholder="Name"><br>
-                        <input type="text" id="register-email" placeholder="Email"><br>
-                        <input type="text" id="register-password" placeholder="Password"><br>
+                    <form action="https://localhost:7006/api/Person/CreatePerson" method="POST" id="register-form">
+                        <input type="text" name="name" id="register-name" placeholder="Name"/><br>
+                        <input type="text" name="email" id="register-email" placeholder="Email"/><br>
+                        <input type="text" name="password" id="register-password" placeholder="Password"/><br>
+                        <input form="register-form" type="submit" id="register-submit" value="Register">
                     </form>
-                    <input form="register-form" type="submit" id="register-submit" value="Register">
                     <button onclick="showLogin()" id="login-button">Have an account?</a>
                 </div>
             </div>
@@ -65,31 +65,6 @@
             
             loginDiv.style.display = 'none';
             registerDiv.style.display = 'block';
-        }
-
-        const registerForm = document.queryselector("#register-form");
-        if (registerForm) {
-            registerForm.addEventListener("submit", function(e) {
-                submitForm(e, this);
-            });
-        }
-
-        async function submitForm(e, form) {
-            e.preventDefault();
-
-            const btnSubmit = document.getElementById(registerBtn);
-            btnSubmit.disabled = true;
-            setTimeout(() => btnSubmit.disabled = false, 2000);
-
-            const headers = buildHeaders();
-
-            const response = await fetchService.performPostHttpRequest('https://localhost:7006/api/CreatePerson', headers, jsonFormData);
-            console.log(response);
-
-            if(response)
-                window.location = '/success.html?Name=${reponse.Name}&Email-${repsonse.Email}&Id-${reponse.Id}&Password-${response.Password}';
-            else
-                alert('An error occured.');
         }
     </script>
 </html>
